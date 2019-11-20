@@ -1,0 +1,179 @@
+#include<iostream>
+#include<Windows.h>
+#include<conio.h>
+#include <cwchar>
+using namespace std;
+
+
+void main()
+{ 
+	system("START /B ko.mp3");
+
+	 CONSOLE_FONT_INFOEX cfi;
+cfi.cbSize = sizeof(cfi);
+cfi.nFont = 0;
+cfi.dwFontSize.X = 24;                   // Width of each character in the font
+cfi.dwFontSize.Y = 24;                  // Height
+cfi.FontFamily = FF_DONTCARE;
+cfi.FontWeight = FW_NORMAL;
+std::wcscpy(cfi.FaceName, L"Consolas"); // Choose your font
+SetCurrentConsoleFontEx(GetStdHandle(STD_OUTPUT_HANDLE), FALSE, &cfi);
+
+	int f,b,x,num=1,num1=1;
+	//char f,b;
+	double MealPrice[12]={0,5,6,3.25,3,3.25,4,2.5,2.5,1,1};
+	double JuicePrice[10]={0,3,3,3.25,3,3,3,3,3};
+	double bill=0;
+	cout<<"\t\t HOMMIES RESTURENT"<<endl;
+	Sleep(3000);
+	system ("cls");
+	cout<<"\t\t << This project has done by Laith Fares (: >> "<<endl;
+	Sleep(3000);
+	cout<<endl;
+	cout<<endl;
+	cout<<"\t\t << Welcome to Hommies resturent Madam , Sir >> "<<endl;
+	cout<<endl;
+	cout<<endl;
+	cout<<"\t\t We hope to serve you as best we can"<<endl;
+	Sleep(5000);
+	system ("cls");
+	//1:red | 2:green | 3:blue | 5:pink | 6:orange | 7:yellow
+	cout<<endl;
+	cout<<"\t First we will show you a sutable colors to choose between them (:"<<endl;
+	cout<<endl;
+	Sleep(5000);
+	cout<<"\t Red press 1 <> Green press 2 <> Blue press 3"<<endl;
+	cout<<endl;
+	cout<<"\t White press 4 <>  Gray press 5 <> Yellow press 6 "<<endl;
+	/*cout<<"\t Red press C <> Green press A <> Blue press 9"<<endl;
+	cout<<endl;
+	cout<<"\t White press 7 <>  Gray press 8 <> Yellow press 6 "<<endl;
+	cout<<endl;*/
+	cout<<endl;
+	cout<<"\t Please enter the background color .."<<endl;
+	cout<<"\t color B :";cin>>b;
+	cout<<"\t Please enter the text color .."<<endl;
+	cout<<"\t color T :";cin>>f;
+	/*string color="color ";
+	color+=b;
+	color+=f;
+	system(color.c_str());*/
+
+
+	if(b==1&&f==2)
+		system("color C4");
+	if(b==1&&f==3)
+		system("color C1");
+	if(b==1&&f==4)
+		system("color C7");
+	if(b==1&&f==5)
+		system("color C8");
+	if(b==1&&f==6)
+		system("color C6");
+	if(b==2&&f==1)
+		system("color A4");
+	if(b==2&&f==3)
+		system("color A1");
+	if(b==2&&f==4)
+		system("color A7");
+	if(b==2&&f==5)
+		system("color A8");
+	if(b==2&&f==6)
+		system("color A6");
+	if(b==3&&f==1)
+		system("color 94");
+	if(b==3&&f==2)
+		system("color 9A");
+	if(b==3&&f==4)
+		system("color 97");
+	if(b==3&&f==5)
+		system("color 98");
+	if(b==3&&f==6)
+		system("color 96");
+	if(b==4&&f==1)
+		system("color 7C");
+	if(b==4&&f==2)
+		system("color 7A");
+	if(b==4&&f==3)
+		system("color 71");
+	if(b==4&&f==5)
+		system("color 78");
+	if(b==4&&f==6)
+		system("color 7E");
+	if(b==5&&f==1)
+		system("color 8C");
+	if(b==5&&f==2)
+		system("color 8A");
+	if(b==5&&f==3)	
+		system("color 81");
+	if(b==5&&f==4)
+		system("color 87");
+	if(b==5&&f==6)
+		system("color 86");
+	if(b==6&&f==1)
+		system("color E4");
+	if(b==6&&f==2)
+		system("color E2");
+	if(b==6&&f==3)
+		system("color E9");
+	if(b==6&&f==4)
+		system("color E7");
+	if(b==6&&f==5)
+		system("color E8");
+	system ("cls");
+	cout<<"\t Suitable choise !"<<endl;
+	Sleep(3000);
+	cout<<endl;
+	cout<<"\t We offers a delicious snacks and fresh juice"<<endl;
+	Sleep(2000);
+	cout<<endl;
+	cout<<"\t This is the menu of our Snacks "<<endl;
+	cout<<endl;
+	cout<<"\t (1) Cheese Pizza 5.00 $     (2) Italian Pizza 6.00$ "<<endl;
+	cout<<"\t (3) Hot Dog  3.25$          (4) Fahitta  3.00$     "<<endl;
+	cout<<"\t (5) Scalob   3.25$          (6) Stik meat 4.00$ "<<endl;
+	cout<<"\t (7) Cold Zinger 2.50$       (8) Hot Zinger 2.50$ "<<endl;
+	cout<<"\t (9) Potato   1.00$          (10) Salad  1.00$"<<endl;
+	cout<<endl;
+	cout<<"\t Please insert the number of the meal you want "<<endl;
+	cout<<"\t ( If you have finished the selection please insert the number < 0 >) "<<endl;
+	cout<<endl;	
+	while(num)
+	{
+		cout<<"\t Number of meal is :";cin>>num;
+		//Meal(num,bill);
+		bill += MealPrice[num];
+	}
+	cout<<"\t Meal bill is : "<<bill<<endl;
+
+	cout<<endl;
+	cout<<"\t Thanks for choosing "<<endl;
+	Sleep(3000);
+	cout<<endl;
+	cout<<"\t Now this is the menu of our Juice .. please enter the number you want "<<endl;
+	cout<<endl;
+	Sleep(2000);
+	cout<<"\t ( If you have finished the selection please insert the number < 0 >) "<<endl;
+	cout<<endl;
+	cout<<"\t (1) milkshake Chock 3.00 $     (2) MilkShake Ban 3.00$ "<<endl;
+	cout<<"\t (3) Strawberries  3.25$        (4) Mango  3.00$     "<<endl;
+	cout<<"\t (5) Lemon   3.00$              (6) Orange 3.00$ "<<endl;
+	cout<<"\t (7) Fruits 3.00$               (8) Kiwi 3.00$ "<<endl;
+	cout<<endl;
+	num=1;
+	while(num)
+	{
+		cout<<"\t Number of Juice is ";cin>>num;
+		//Meal(num,bill);
+		bill += JuicePrice[num];
+	}
+	cout<<endl;
+	cout<<"\t The Final bill is : "<<bill<<"$"<<endl;
+	cout<<endl;
+	Sleep(2000);
+	cout<<"\t Thank you for visiting us. We wish you a happy day "<<endl;
+	cout<<endl;
+	cout<<"\t Dr.Malak ..... Big Respect <3"<<endl;
+	cout<<endl;
+
+}
